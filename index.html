@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Descarga automática de imágenes</title>
+</head>
+<body>
+  <h1>Descargando imágenes automáticamente...</h1>
+
+  <script>
+    const images = [
+      'Captura de pantalla 2025-02-27 095651.png',
+      'Captura de pantalla 2025-02-27 095759.png',
+      'Captura de pantalla 2025-02-27 095859.png'
+    ];
+
+    images.forEach((img, index) => {
+      const a = document.createElement('a');
+      a.href = img;
+      a.download = `imagen${index + 1}.jpg`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    });
+  </script>
+</body>
+</html>
